@@ -26,6 +26,13 @@ export function reduxStateReducer(state = initialState, action) {
 
     case actions.removeFeature:
       return {
+        ...state,
+        car: {
+          ...state.car,
+          features: state.car.features.filter(item => {
+            return item.id === action.payload ? false : true
+          })
+        }
 
       }
     case actions.buyItem:

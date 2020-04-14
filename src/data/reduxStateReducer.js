@@ -16,15 +16,26 @@ export const initialState = {
   ]
 };
 
-
+// strong-type actions to catch bugs early
+const act = {
+  removeFeature: 'remove-feature',
+  buyItem: 'buy-item',
+}
 
 
 // define reducer function
-
 export function reduxStateReducer(state = initialState, action) {
 
   switch(action.type) {
 
+    case act.removeFeature:
+      return {
+
+      }
+    case act.buyItem:
+      return {
+
+      }
     default:
       return state;
   }

@@ -1,3 +1,5 @@
+import { actions } from './actions'
+
 // define initial state of application's object
 export const initialState = {
   additionalPrice: 0,
@@ -16,23 +18,17 @@ export const initialState = {
   ]
 };
 
-// strong-type actions to catch bugs early
-const act = {
-  removeFeature: 'remove-feature',
-  buyItem: 'buy-item',
-}
-
 
 // define reducer function
 export function reduxStateReducer(state = initialState, action) {
 
   switch(action.type) {
 
-    case act.removeFeature:
+    case actions.removeFeature:
       return {
 
       }
-    case act.buyItem:
+    case actions.buyItem:
       return {
 
       }

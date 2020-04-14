@@ -1,5 +1,5 @@
 // define initial state of application's object
-const initialState = {
+export const initialState = {
   additionalPrice: 0,
   car: {
     price: 26395,
@@ -23,5 +23,9 @@ const initialState = {
 
 export function reduxStateReducer(state = initialState, action) {
 
-  return state;
+  switch(action.type) {
+
+    default:
+      return state;
+  }
 }

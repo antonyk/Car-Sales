@@ -22,7 +22,7 @@ const App = (props) => {
     <div className="boxes">
       <div className='box-set'>
         <div className="box">
-          <Header car={state.car} />
+          <Header />
           <AddedFeatures car={state.car} />
         </div>
         <div className="box">

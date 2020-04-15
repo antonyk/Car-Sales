@@ -9,12 +9,19 @@ body {
   place-items: center;
 }
 .boxes {
-  display: grid;
-  grid-gap: 2em;
-  grid-template-columns: repeat(2, minmax(350px, 1fr));
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: row;
+  // display: grid;
+  // grid-gap: 2em;
+  // grid-template-columns: repeat(2, minmax(350px, 1fr));
+  // grid-template-rows: auto;
+}
+.box-set {
+  display: flex;
+  flex-direction: row;
 }
 .box {
+  margin: 5px 10px;
   display: flex;
   flex-direction: column;
   min-height: 100%;

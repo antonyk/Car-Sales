@@ -11,7 +11,8 @@ const AdditionalFeatures = props => {
       {props.features.length ? (
         <ol type="1">
           {props.features.map(item => (
-            <AdditionalFeature key={item.id} feature={item} addFeature={addFeature(item)} />
+            <AdditionalFeature key={item.id} feature={item} 
+            addFeatureHandler={() => props.addFeature(item)} />
           ))}
         </ol>
       ) : (
@@ -29,5 +30,5 @@ function mapToProps(state) {
 }
 
 export default connect(mapToProps, {
-  addFeature
+  addFeature: addFeature
 })(AdditionalFeatures);

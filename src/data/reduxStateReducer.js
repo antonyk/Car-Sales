@@ -37,13 +37,14 @@ export function reduxStateReducer(state = initialState, action) {
         additionalPrice: state.additionalPrice - action.payload.price
       }
     case actions.addFeature:
+      console.log(action.type, ', action: ', action)
       return {
         ...state,
         car: {
           ...state.car,
           features: [...state.car.features, action.payload]
         },
-        additionalFeatures: state.car.additionalFeatures.filter(item => {
+        additionalFeatures: state.additionalFeatures.filter(item => {
           return item.id === action.payload.id ? false : true
         }),
         additionalPrice: state.additionalPrice + action.payload.price
@@ -52,6 +53,8 @@ export function reduxStateReducer(state = initialState, action) {
       return {
       }
     default:
+      console.log('default -> state: ', state)
+      console.log('default -> action: ', action)
       return state;
   }
 }

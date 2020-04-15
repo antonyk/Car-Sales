@@ -12,7 +12,7 @@ const AddedFeatures = props => {
         <ol type="1">
           {props.features.map(item => (
             <AddedFeature key={item.id} feature={item} 
-            removeFeature={() => removeFeature(item)} />
+            removeFeature={() => props.removeFeature(item)} />
           ))}
         </ol>
       ) : (

@@ -6,10 +6,10 @@ export const actions = {
 }
 
 
-export function removeFeature(id) {
+export function removeFeature(feature) {
   return {
     type: actions.removeFeature,
-    payload: id
+    payload: feature
   }
 }
 

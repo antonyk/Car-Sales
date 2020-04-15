@@ -30,14 +30,26 @@ export function reduxStateReducer(state = initialState, action) {
         car: {
           ...state.car,
           features: state.car.features.filter(item => {
-            return item.id === action.payload ? false : true
+            return item.id === action.payload.id ? false : true
           })
-        }
-
+        },
+        additionalFeatures: [...state.additionalFeatures, action.payload],
+        additionalPrice: state.additionalPrice - action.payload.price
+      }
+    case actions.addFeature:
+      return {
+        ...state,
+        car: {
+          ...state.car,
+          features: [...state.car.features, action.payload]
+        },
+        additionalFeatures: state.car.additionalFeatures.filter(item => {
+          return item.id === action.payload.id ? false : true
+        }),
+        additionalPrice: state.additionalPrice + action.payload.price
       }
     case actions.buyItem:
       return {
-
       }
     default:
       return state;
